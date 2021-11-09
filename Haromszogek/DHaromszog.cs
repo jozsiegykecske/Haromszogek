@@ -98,9 +98,13 @@ namespace Haromszogek
     public DHaromszog(string sor, int sorSzama)
     {
       string[] adatok = sor.Split();
-      a = Convert.ToDouble(adatok[0]);
-      b = Convert.ToDouble(adatok[1]);
-      c = Convert.ToDouble(adatok[2]);
+      for (int i = 0; i < adatok.Length; i++)
+      {
+        adatok[i] = adatok[i].Replace(',','.');
+      }
+      a = double.Parse(adatok[0]);
+      b = double.Parse(adatok[1]);
+      c = double.Parse(adatok[2]);
 
       //a > 0 ? aOldal = a :"Az a oldal nem lehet nulla";
       //b > 0 ? bOldal = a :"A b oldal nem lehet nulla";
