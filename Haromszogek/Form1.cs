@@ -63,5 +63,13 @@ namespace Haromszogek
       }
 
     }
+
+    private void lbDerkekszoguk_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      lbDerekszoguAdatok.Items.Clear();
+      int index = Convert.ToInt32(lbDerkekszoguk.SelectedIndex.ToString().Substring(0,1));
+      lbDerekszoguAdatok.Items.Add($"Kerület: {haromszogek[index].Kerulet}");
+      lbDerekszoguAdatok.Items.Add($"Kerület: {haromszogek[index].Terulet}");
+    }
   }
 }

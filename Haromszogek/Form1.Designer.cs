@@ -34,8 +34,11 @@ namespace Haromszogek
       this.lbHibak = new System.Windows.Forms.ListBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.lbDerkekszoguk = new System.Windows.Forms.ListBox();
+      this.groupBox3 = new System.Windows.Forms.GroupBox();
+      this.lbDerekszoguAdatok = new System.Windows.Forms.ListBox();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
+      this.groupBox3.SuspendLayout();
       this.SuspendLayout();
       // 
       // btnAdatokBetoltese
@@ -83,12 +86,32 @@ namespace Haromszogek
       this.lbDerkekszoguk.Name = "lbDerkekszoguk";
       this.lbDerkekszoguk.Size = new System.Drawing.Size(167, 160);
       this.lbDerkekszoguk.TabIndex = 0;
+      this.lbDerkekszoguk.SelectedIndexChanged += new System.EventHandler(this.lbDerkekszoguk_SelectedIndexChanged);
+      // 
+      // groupBox3
+      // 
+      this.groupBox3.Controls.Add(this.lbDerekszoguAdatok);
+      this.groupBox3.Location = new System.Drawing.Point(333, 274);
+      this.groupBox3.Name = "groupBox3";
+      this.groupBox3.Size = new System.Drawing.Size(362, 160);
+      this.groupBox3.TabIndex = 3;
+      this.groupBox3.TabStop = false;
+      this.groupBox3.Text = "Kiválasztott derékszögű háromszög adatai:";
+      // 
+      // lbDerekszoguAdatok
+      // 
+      this.lbDerekszoguAdatok.FormattingEnabled = true;
+      this.lbDerekszoguAdatok.Location = new System.Drawing.Point(7, 20);
+      this.lbDerekszoguAdatok.Name = "lbDerekszoguAdatok";
+      this.lbDerekszoguAdatok.Size = new System.Drawing.Size(349, 134);
+      this.lbDerekszoguAdatok.TabIndex = 0;
       // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
+      this.Controls.Add(this.groupBox3);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.btnAdatokBetoltese);
@@ -97,6 +120,7 @@ namespace Haromszogek
       this.Shown += new System.EventHandler(this.Form1_Shown);
       this.groupBox1.ResumeLayout(false);
       this.groupBox2.ResumeLayout(false);
+      this.groupBox3.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -108,6 +132,8 @@ namespace Haromszogek
     private System.Windows.Forms.ListBox lbHibak;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.ListBox lbDerkekszoguk;
+    private System.Windows.Forms.GroupBox groupBox3;
+    private System.Windows.Forms.ListBox lbDerekszoguAdatok;
   }
 }
 
