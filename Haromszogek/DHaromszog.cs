@@ -117,7 +117,7 @@ namespace Haromszogek
       {
         throw new DerekszoguException("A háromszög nem derékszögű");
       }
-      
+      sorszama = sorSzama;
       terulet = a + b + c;
       kerulet = a * b / 2;
     }

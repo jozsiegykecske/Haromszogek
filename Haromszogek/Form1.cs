@@ -22,45 +22,44 @@ namespace Haromszogek
     static int szamlalo = 1;
     private void Form1_Shown(object sender, EventArgs e)
     {
-      
-     
-      
-      
-      //Console.WriteLine(valami.Kerulet);
-      //Console.WriteLine(valami.Terulet);
-
     }
 
     private void btnAdatokBetoltese_Click(object sender, EventArgs e)
     {
+      lbHibak.Items.Clear();
+      lbDerkekszoguk.Items.Clear();
       szamlalo = 1;
       OpenFileDialog ofd = new OpenFileDialog();
-      ofd.Filter = "Text files |*.txt";
+      ofd.Filter = "Text files (.txt) |*.txt";
       if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
       {
         StreamReader be = new StreamReader(ofd.FileName);
-       
         while (!be.EndOfStream)
         {
           try
           {
-            haromszogek.Add(new DHaromszog(be.ReadLine(),1));
+            haromszogek.Add(new DHaromszog(be.ReadLine(),szamlalo));
           }
           catch (Exception ex)
           {
-            lbHibak.Items.Add($"{szamlalo}.sor: "+ ex.Message);
+            
+            lbHibak.Items.Add($"{szamlalo}.sor: "+ ex.Message); 
           }
           szamlalo++;
         }
         be.Close();
-        foreach (var h in haromszogek)
+        szamlalo = 1;
+
+
+        for (int i = 0; i < haromszogek.Count; i++)
         {
-          szamlalo = 1;
-          if (Math.Pow(h.a, 2) + Math.Pow(h.b, 2) == Math.Pow(h.c, 2))
+          if (Math.Pow(haromszogek[i].a, 2) + Math.Pow(haromszogek[i].b, 2) == Math.Pow(haromszogek[i].c, 2))
           {
-            lbDerkekszoguk.Items.Add($"{szamlalo}. sor: a = {h.a} b = {h.b} c = {h.c}");
-          }
+            lbDerkekszoguk.Items.Add($"{haromszogek[i].Sorszama}. sor: a = {haromszogek[i].a} b = {haromszogek[i].b} c = {haromszogek[i].c}");
+          } 
         }
+          
+        
       }
 
     }
