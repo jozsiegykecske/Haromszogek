@@ -35,6 +35,7 @@ namespace Haromszogek
     {
       szamlalo = 1;
       OpenFileDialog ofd = new OpenFileDialog();
+      ofd.Filter = "Text files |*.txt";
       if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
       {
         StreamReader be = new StreamReader(ofd.FileName);
@@ -47,7 +48,6 @@ namespace Haromszogek
           }
           catch (Exception ex)
           {
-
             lbHibak.Items.Add($"{szamlalo}.sor: "+ ex.Message);
           }
           szamlalo++;
