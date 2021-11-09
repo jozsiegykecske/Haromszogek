@@ -31,7 +31,7 @@ namespace Haromszogek
     {
       this.btnAdatokBetoltese = new System.Windows.Forms.Button();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.listBox1 = new System.Windows.Forms.ListBox();
+      this.lbHibak = new System.Windows.Forms.ListBox();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -43,10 +43,11 @@ namespace Haromszogek
       this.btnAdatokBetoltese.TabIndex = 0;
       this.btnAdatokBetoltese.Text = "Adatok betöltése";
       this.btnAdatokBetoltese.UseVisualStyleBackColor = true;
+      this.btnAdatokBetoltese.Click += new System.EventHandler(this.btnAdatokBetoltese_Click);
       // 
       // groupBox1
       // 
-      this.groupBox1.Controls.Add(this.listBox1);
+      this.groupBox1.Controls.Add(this.lbHibak);
       this.groupBox1.Location = new System.Drawing.Point(42, 92);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Size = new System.Drawing.Size(527, 155);
@@ -54,13 +55,13 @@ namespace Haromszogek
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Hibák a kiválasztott állományban:";
       // 
-      // listBox1
+      // lbHibak
       // 
-      this.listBox1.FormattingEnabled = true;
-      this.listBox1.Location = new System.Drawing.Point(6, 19);
-      this.listBox1.Name = "listBox1";
-      this.listBox1.Size = new System.Drawing.Size(515, 121);
-      this.listBox1.TabIndex = 2;
+      this.lbHibak.FormattingEnabled = true;
+      this.lbHibak.Location = new System.Drawing.Point(6, 19);
+      this.lbHibak.Name = "lbHibak";
+      this.lbHibak.Size = new System.Drawing.Size(515, 121);
+      this.lbHibak.TabIndex = 2;
       // 
       // Form1
       // 
@@ -81,7 +82,7 @@ namespace Haromszogek
 
     private System.Windows.Forms.Button btnAdatokBetoltese;
     private System.Windows.Forms.GroupBox groupBox1;
-    private System.Windows.Forms.ListBox listBox1;
+    private System.Windows.Forms.ListBox lbHibak;
   }
 }
 
