@@ -19,18 +19,10 @@ namespace Haromszogek
     }
 
     static List<DHaromszog> haromszogek = new List<DHaromszog>();
+    static int szamlalo = 1;
     private void Form1_Shown(object sender, EventArgs e)
     {
-      try
-      {
-        DHaromszog valami = new DHaromszog("3 3 5", 1);
-        Console.WriteLine("Eddig jó!");
-      }
-      catch (Exception ex)
-      {
-
-        
-      }
+      
      
       
       
@@ -41,11 +33,12 @@ namespace Haromszogek
 
     private void btnAdatokBetoltese_Click(object sender, EventArgs e)
     {
+      szamlalo = 1;
       OpenFileDialog ofd = new OpenFileDialog();
       if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
       {
         StreamReader be = new StreamReader(ofd.FileName);
-        int szamlalo = 0;
+       
         while (!be.EndOfStream)
         {
           try
@@ -60,6 +53,14 @@ namespace Haromszogek
           szamlalo++;
         }
         be.Close();
+        foreach (var h in haromszogek)
+        {
+          szamlalo = 1;
+          if (Math.Pow(h.a, 2) + Math.Pow(h.b, 2) == Math.Pow(h.c, 2))
+          {
+            lbDerkekszoguk.Items.Add($"{szamlalo}. sor: a = {h.a} b = {h.b} c = {h.c}");
+          }
+        }
       }
 
     }
